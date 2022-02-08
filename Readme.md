@@ -1,6 +1,6 @@
 # Coding test notes
 
-
+[![Rust](https://github.com/dymayday/super-duper-octo-echo/actions/workflows/rust.yml/badge.svg)](https://github.com/dymayday/super-duper-octo-echo/actions/workflows/rust.yml)
 
 Sending a payload to a echo server and using a fail over system in case of client interuption.
 
