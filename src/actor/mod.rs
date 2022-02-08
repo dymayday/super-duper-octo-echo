@@ -64,7 +64,7 @@ impl Actor {
                 respond_to,
             } => {
                 self.inc();
-                let pl = Payload::from_actor(&self);
+                let pl = Payload::from_actor(self);
 
                 stream.write_all(&pl.to_bytes()?).await?;
                 stream.flush().await?;

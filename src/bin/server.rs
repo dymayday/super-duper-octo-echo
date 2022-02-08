@@ -3,7 +3,6 @@
 #[macro_use]
 extern crate log;
 use cio::message::Payload;
-use env_logger;
 use tokio::net::TcpListener;
 
 #[tokio::main]
