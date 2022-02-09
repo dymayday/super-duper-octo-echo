@@ -1,4 +1,4 @@
-//! Nothing much here except the needed exports by the projec architecture.
+//! Nothing much here except the needed exports by the project architecture.
 
 pub mod actor;
 pub mod error;
