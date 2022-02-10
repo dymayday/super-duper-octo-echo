@@ -4,7 +4,8 @@ use tokio::net::TcpStream;
 use tokio::sync::mpsc;
 use crate::actor::Actor;
 use crate::error::Result;
-use crate::message::Message;
+#[allow(unused_imports)]
+use crate::message::{Message, Payload};
 use crate::CHAN_SIZE;
 
 /// The Actor handle is the piece that sends the messages
@@ -24,7 +25,7 @@ impl ActorHandle {
         Self { sender }
     }
 
-    /// Command to send the [`Message::Payload`] to the address.
+    /// Command to send the [`Payload`] to the address.
     pub async fn send_payload(&self, addr: &str) -> Result<usize> {
         let (tx, rx) = tokio::sync::oneshot::channel();
         let stream = TcpStream::connect(addr).await?;
