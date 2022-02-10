@@ -28,9 +28,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Using select let us handle an interuption concurrently with
         // the main working loop.
         tokio::select! {
-            // Main working loop.
+            // Main working part of the loop.
             _ = async {
-                loop {
                     counter = match actor.send_payload(&addr).await {
                         Ok(c) => c,
                         Err(err) => {
@@ -39,7 +38,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                         }
                     };
                     interval.tick().await;
-                }
             } => {}
             // Interupting the work.
             _ = tokio::signal::ctrl_c() => {
