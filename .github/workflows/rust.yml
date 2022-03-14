@@ -16,9 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install optimizing tools
+    - name: Install ic optimizer
       run: cargo install ic-cdk-optimizer
-        npm install wasm-opt
+    - name: Install wasm optimizer
+      run: npm install wasm-opt
     - name: Build
       run: cargo build --verbose
     - name: Run tests
