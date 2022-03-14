@@ -16,10 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install Rust
-        run:
-          rustup target add wasm32-unknown-unknown
-          cargo install ic-cdk-optimizer wasm-opt
+    - name: Install optimizing tools
+      run: cargo install ic-cdk-optimizer wasm-opt
     - name: Build
       run: cargo build --verbose
     - name: Run tests
